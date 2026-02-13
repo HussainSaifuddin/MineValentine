@@ -19,7 +19,7 @@ try {
     $mail->Port       = 465;
 
     //Recipients
-    $mail->setFrom('znz.ourjourneytogether@gmail.com', 'Mailer');         //Set the sender of the message (your email address)
+    $mail->setFrom('1086225.aptechiic@gmail.com', 'Mailer');         //Set the sender of the message (your email address)
     $mail->addAddress('husseinezzy.saifee@gmail.com', 'Joe User');     //Add a recipient (your bae's email address)
 
     //Content

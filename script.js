@@ -53,21 +53,26 @@ const button = document.getElementById("valentinesButton");
 button.addEventListener("click", () => {
   if (button.textContent === "Click Me! ❤") {
     button.textContent = "loading...";
-    fetch('send_mail.php')
-      .then(response => {
-        if (response.ok) {
-          button.textContent = "Check Your Email 🙃";
-        } else {
-          console.error('Failed to send email');
-          button.textContent = "Error 😞";
-        }
-      })
-      .catch(error => {
-        // Handle network errors or other issues
-        console.error('Error:', error);
-        button.textContent = "Error 😞";
-      });
+   fetch('send_mail.php', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ send: true })
+})
+.then(response => response.text())
+.then(data => {
+  console.log("Server response:", data);
+
+  if (data.includes("Message has been sent")) {
+    button.textContent = "Check Your Email 💌";
+  } else {
+    button.textContent = "Error 😞";
   }
+})
+.catch(error => {
+  console.error('Fetch error:', error);
+  button.textContent = "Error 😞";
 });
 
 function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {

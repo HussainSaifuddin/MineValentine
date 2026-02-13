@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -16,7 +20,7 @@ try {
     $mail->Username   = '1086225.aptechiic@gmail.com';                     //SMTP username (your gmail account)
     $mail->Password   = 'ipxknyqgbalmlfvt';                               //SMTP password (your gmail password or app password)
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    $mail->Port       = 587;
 
     //Recipients
     $mail->setFrom('1086225.aptechiic@gmail.com', 'Mailer');         //Set the sender of the message (your email address)

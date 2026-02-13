@@ -13,8 +13,8 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';                       //gmail SMTP server set to send through
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'znz.ourjourneytogether@gmail.com';                     //SMTP username (your gmail account)
-    $mail->Password   = 'naranjethani';                               //SMTP password (your gmail password or app password)
+    $mail->Username   = '1086225.aptechiic@gmail.com';                     //SMTP username (your gmail account)
+    $mail->Password   = 'ipxk nyqg balm lfvt';                               //SMTP password (your gmail password or app password)
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
